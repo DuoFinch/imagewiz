@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: imagewiz
+Version: 0.3
+Summary: A image preprocessing module to compliment Tensorflow/Keras
+Home-page: https://github.com/evangibson/imagewiz
+Author: Evan Gibson
+Author-email: evan.gibson@duofinch.com
+License: UNKNOWN
+Description: # imageWiz Module
+        A simple framework for handling the more mundane parts of image processing.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
