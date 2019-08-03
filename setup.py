@@ -21,5 +21,5 @@ setuptools.setup(name='imagewiz',
                  url="https://github.com/evangibson/imagewiz",
                  packages=['imagewiz',],
                  classifiers=["Programming Language :: Python :: 3",
-                              "License :: MIT License",
+                              "License :: OSI Approved:: MIT License",
                               "Operating System :: OS Independent"])
