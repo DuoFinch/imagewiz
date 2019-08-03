@@ -10,6 +10,6 @@ Description: # imageWiz Module
         A simple framework for handling the more mundane parts of image processing.
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved:: MIT License
+Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Description-Content-Type: text/markdown
