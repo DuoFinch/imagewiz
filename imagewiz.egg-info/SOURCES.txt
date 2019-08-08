@@ -6,4 +6,5 @@ imagewiz/fw.py
 imagewiz.egg-info/PKG-INFO
 imagewiz.egg-info/SOURCES.txt
 imagewiz.egg-info/dependency_links.txt
+imagewiz.egg-info/requires.txt
 imagewiz.egg-info/top_level.txt
