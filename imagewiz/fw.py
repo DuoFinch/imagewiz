@@ -31,10 +31,15 @@ import pydicom
 
 #%% Definitions
 
-class fileWiz:
+class FileWiz:
     """Class dealing with the process of arranging files
     into directories for Tensorflow training"""
-    
+    def __init__(self, ref_df, pki_index_col, orig_folder):
+        # ref_df should be a reference dataframe
+        self.df = df
+        self.pki = pki_index_col
+        self.ori
+
     def classGrab(df,
                   pki_index_col,
                   tar_class = 'class',
