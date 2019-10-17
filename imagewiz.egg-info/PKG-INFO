@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: imagewiz
-Version: 0.4
+Version: 0.5
 Summary: A image preprocessing module to compliment Tensorflow/Keras
 Home-page: https://github.com/DuoFinch/imagewiz
 Author: Evan Gibson

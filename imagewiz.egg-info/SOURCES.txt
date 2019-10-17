@@ -3,6 +3,7 @@ imagewiz
 setup.py
 imagewiz/__init__.py
 imagewiz/fw.py
+imagewiz/he.py
 imagewiz.egg-info/PKG-INFO
 imagewiz.egg-info/SOURCES.txt
 imagewiz.egg-info/dependency_links.txt
