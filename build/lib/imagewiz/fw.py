@@ -5,7 +5,7 @@ Created on Tue Jul 30 18:51:36 2019
 ==========
 Name: FileWiz (fw)
 ==========
-Consideration: The imagewiz module is deisgned to work with established image processing python modules.
+Consideration: The imagewiz module is designed to work with established image processing python modules.
 ==========
 Description: This module is meant to be used to streamline the practical workflow of image preprocessing. 
              This script deals with file movement, environment setup, and with reformatting unruly data.
@@ -35,7 +35,9 @@ class FileWiz:
     """Class dealing with the process of arranging files
     into directories for Tensorflow training"""
 
-    def __init__(self, ref_df, orig_folder):
+    def __init__(self,
+                 ref_df,
+                 orig_folder):
         # ref_df should be a reference dataframe
         self.df = ref_df
         self.ori = orig_folder
@@ -141,41 +143,37 @@ class FileWiz:
         self.file_ori = filename_list_orig
         self.file_move = filename_list_train
 
-class weirdWrang:
-    """Built for dealing with images that behave strangely
-    or need to be reformatted before modeling"""
-    
-    def dicom_to_png(dicom_folder,
-                   output_folder,
-                   dic_extension = "dcm",
-                   grey = True,
-                   coef_max = 255.0):
+    def dicomelse(self,
+                  dest_folder,
+                  dic_extension="dcm",
+                  grey=True,
+                  coef_max=255.0):
         """Converts DICOM file arrays to PNG images
-        and places them into a target folder. 
+        and places them into a target folder.
         By default, it interprets them as greyscale"""
-        
-        if not os.path.exists(output_folder):
-            os.mkdir(output_folder)
-            
-        list_files_temp = os.listdir(dicom_folder)
+
+        if not os.path.exists(dest_folder):
+            os.mkdir(dest_folder)
+
+        list_files_temp = os.listdir(self.ori)
         # Narrow the list to only include files with our desired extension
         list_files = list()
         for i in list_files_temp:
             if i[-3:] == dic_extension:
                 list_files.append(i)
-        
+
         for filename in list_files:
-            ds = pydicom.dcmread(os.path.join(dicom_folder + filename))
+            ds = pydicom.dcmread(os.path.join(self.ori + filename))
             shape = ds.pixel_array.shape
             # Convert to float to avoid overflow or underflow losses.
             image_2d = ds.pixel_array.astype(float)
-            image_2d_scaled = (np.maximum(image_2d,0) / image_2d.max()) * coef_max
+            image_2d_scaled = (np.maximum(image_2d, 0) / image_2d.max()) * coef_max
             # Convert to uint
             image_2d_scaled = np.uint8(image_2d_scaled)
             p_filename = filename[:-3] + "png"
-    
-        with open(os.path.join(output_folder + p_filename), 'wb') as png_file:
+
+        with open(os.path.join(dest_folder + p_filename), 'wb') as png_file:
             w = png.Writer(shape[1], shape[0], greyscale=grey)
             w.write(png_file, image_2d_scaled)
-            
-        return os.listdir(output_folder)
+
+        return os.listdir(dest_folder)
