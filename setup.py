@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name='imagewiz',
-                 version='0.8',
+                 version='0.9',
                  author="Evan Gibson",
                  author_email="evan.gibson@duofinch.com",
                  description="A image preprocessing module to compliment Tensorflow/Keras",
